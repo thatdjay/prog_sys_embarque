@@ -1,12 +1,14 @@
 /**
  * @file   main.c,  Laboratoire 1
  * @author Jeremie Hamel
- * @date   
- * @brief  
+ * @date   19/01/2023 
+ * @brief  Ce programme allume des dels jaune et rouge en alternance aux 500ms trois fois. 
+ *         Ensuite, il affiche "Lab1 Jeremie Hamel" sur l'afficheur lcd. Pour finir, il
+ *         affiche les caractères recus par le port serie à l'afficheur.
  * Environnement:
  *     Développement: MPLAB X IDE (version 6.0)
  *     Compilateur: XC8 (version 2.20)
- *     Matériel: Carte démo noire avec PIC 18F458
+ *     Matériel:    PIC 18F458
  */
 
 /****************** Liste des INCLUDES ****************************************/
@@ -34,7 +36,7 @@ void main(void)
     /******* variables locale au main ******/
     char c; //variable pour le caract?re ? afficher
     
-    //les diff?rentes initialisations et setup
+    //les différentes initialisations et setup
     initialisation(); //initialise les ports e/s
     init_serie(); //initialise la communication série
     
@@ -43,8 +45,8 @@ void main(void)
     lcd_curseurHome(); //positionne le curseur ?(1,1)
     lcd_effaceAffichage(); //efface l'afficheur lcd
     
-    //fait clignoter les dels en les allumants, attendant 500ms, les éteignants pour finalement attendre un autre 500ms. 
-    //Ces ?tapes sont répétées 3 fois
+    //fait clignoter les dels en alternances en les allumants, attendant 500ms, les éteignants pour finalement attendre un autre 500ms. 
+    //Ces étapes sont répétées 3 fois
     for(int i = 0; i < 3; i++)
     {
         ledRouge = 1;
@@ -63,22 +65,22 @@ void main(void)
         if(kbhit()) //si une touche est tappée au clavier
         {
             c = getch(); //la touche est mémorisée dans la variable c
-            lcd_ecritChar(c); //le caract?re est affiché
-            __delay_ms(100); //d?lai pour ne pas afficher des caracères trop rapidement
+            lcd_ecritChar(c); //le caractère est affiché
+            __delay_ms(100); //délai pour ne pas afficher des caracères trop rapidement
         }        
     }
 }
 
 /*
- * @brief Fait l'initialisation des différents regis tres et variables.
+ * @brief Fait l'initialisation des différents registres et variables.
  * @param Aucun
  * @return Aucun
  */
 void initialisation(void) 
 {
-    ADCON1 = 0x7;
+    ADCON1 = 0x7; //force le mode digital pour le port B
     TRISA  = 0; //Tout le port a en sortie
     TRISD  = 0; //tout le port d est en sortie
-    TRISC  = 0b10000000; //tout le port c est en sortie sauf la pin ou se situe la broche RX
+    TRISC  = 0b10000000; //tout le port C est en sortie sauf la pin ou se situe la broche RX
 }
 
