@@ -7,7 +7,7 @@
 # 1 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "main.c" 2
-# 13 "main.c"
+# 15 "main.c"
 # 1 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -10070,10 +10070,10 @@ __attribute__((__unsupported__("The " "Write_b_eep" " routine is no longer suppo
 unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 34 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\\pic\\include\\xc.h" 2 3
-# 13 "main.c" 2
+# 15 "main.c" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c99\\stdbool.h" 1 3
-# 14 "main.c" 2
+# 16 "main.c" 2
 
 # 1 "./Lcd4Lignes.h" 1
 # 24 "./Lcd4Lignes.h"
@@ -10129,7 +10129,7 @@ void lcd_cacheCurseur(void);
 
 
 void lcd_montreCurseur(void);
-# 15 "main.c" 2
+# 17 "main.c" 2
 
 # 1 "./serie_458.h" 1
 # 11 "./serie_458.h"
@@ -10138,8 +10138,8 @@ void putch(char car);
 char getch(void);
 char getche(void);
 __bit kbhit(void);
-# 16 "main.c" 2
-# 26 "main.c"
+# 18 "main.c" 2
+# 28 "main.c"
 void initialisation(void);
 
 
