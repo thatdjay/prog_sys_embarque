@@ -83,7 +83,6 @@ void main(void)
 	init_serie(); //initialise la communication s.rie
 	lcd_init(); //initialise l'afficheur lcd
 	lcd_curseurHome();  //positionne le curseur ра (1, 1)
-	flashDEL(); //appel la fonction flashDEL pour faire clignoter les DEL
 	
 	while (1) //bouvle infinie
 	{
